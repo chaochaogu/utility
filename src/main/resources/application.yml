@@ -1,0 +1,7 @@
+# 微软云配置
+azure:
+  oss:
+    defaultEndpointsProtocol: https
+    accountName: f2wossfilehdd
+    accountKey: GiDg58DcAx8fLBQYqhjnMmKiOgHntWlexP1ZIDwCIdOEQr/IuAl6NQiy6m7Zl+rSU6ynxUJXufAEGYG3+NB2MQ==
+    endpointSuffix: core.chinacloudapi.cn

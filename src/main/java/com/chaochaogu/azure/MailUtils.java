@@ -1,6 +1,5 @@
 package com.chaochaogu.azure;
 
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.mail.javamail.MimeMessageHelper;
 
@@ -12,7 +11,6 @@ import javax.mail.internet.MimeMessage;
  * @author chaochao Gu
  * @date 2019/9/10
  */
-@Slf4j
 public class MailUtils {
 
     public static int sendMail(MailParams mailParams) throws Exception {

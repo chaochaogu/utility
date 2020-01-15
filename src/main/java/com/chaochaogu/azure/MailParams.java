@@ -3,6 +3,8 @@ package com.chaochaogu.azure;
 import lombok.Builder;
 import lombok.Data;
 
+import java.util.List;
+
 /**
  * 邮件参数类
  *
@@ -13,13 +15,13 @@ import lombok.Data;
 @Builder
 public class MailParams {
     /**
-     * 发件人
+     * 发件人邮箱
      */
     private String from;
     /**
-     * 收件人
+     * 收件人邮箱（支持多个）
      */
-    private String to;
+    private List<String> to;
     /**
      * 发送内容
      */

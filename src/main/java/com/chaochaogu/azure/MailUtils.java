@@ -26,7 +26,8 @@ public class MailUtils {
         //发件人
         helper.setFrom(mailParams.getFrom());
         //收件人
-        helper.setTo(mailParams.getTo());
+        String[] tos = mailParams.getTo().toArray(new String[]{});
+        helper.setTo(tos);
         //邮件标题
         helper.setSubject(mailParams.getSubject());
         //true指的是html邮件

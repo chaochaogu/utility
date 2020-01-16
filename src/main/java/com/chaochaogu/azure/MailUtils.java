@@ -13,7 +13,7 @@ import javax.mail.internet.MimeMessage;
  */
 public class MailUtils {
 
-    public static int sendMail(MailParams mailParams) throws Exception {
+    public static void sendMail(MailParams mailParams) throws Exception {
         JavaMailSenderImpl javaMailSender = new JavaMailSenderImpl();
         // javaMailSender.setHost("smtp.163.com");
         // javaMailSender.setHost("mail.pousheng.com");
@@ -34,6 +34,5 @@ public class MailUtils {
         helper.setText(mailParams.getContent(), mailParams.isHtml());
         //发送邮件
         javaMailSender.send(message);
-        return 1;
     }
 }

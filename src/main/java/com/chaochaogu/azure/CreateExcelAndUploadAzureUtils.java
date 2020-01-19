@@ -21,17 +21,18 @@ import java.util.UUID;
  *
  * @author chaochao Gu
  * @date 2020/1/15
+ * @see com.alibaba.excel.annotation.ExcelProperty
+ * TODO 该工具类需要在导出实体类属性上添加@ExcelProperty注解
  */
 @Slf4j
 public class CreateExcelAndUploadAzureUtils {
     private static CloudStorageAccount storageAccount;
 
-    public static <T> String createExcelAndUploadAzure(List<T> list, String fileName, StorageConfig storageConfig) throws Exception {
-        String containerName = "test";
+    public static <T> String createExcelAndUploadAzure(List<T> list, String fileName, StorageConfig storageConfig, String containerName) throws Exception {
         String blobName = fileName + "/" + UUID.randomUUID().toString().replaceAll("-", "") + "/" + ".xls";
         Class clazz = list.get(0).getClass();
         ByteArrayOutputStream out = new ByteArrayOutputStream();
-        EasyExcel.write(out, clazz).registerWriteHandler(new LongestMatchColumnWidthStyleStrategy()).sheet("模板").doWrite(list);
+        EasyExcel.write(out, clazz).registerWriteHandler(new LongestMatchColumnWidthStyleStrategy()).sheet("sheet1").doWrite(list);
         ByteArrayInputStream in = new ByteArrayInputStream(out.toByteArray());
         CloudBlobContainer container = getContainer(containerName, storageConfig);
         CloudBlockBlob blob = container.getBlockBlobReference(blobName);

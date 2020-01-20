@@ -2,6 +2,7 @@ package com.chaochaogu.azure;
 
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.util.CollectionUtils;
 
 import javax.mail.internet.MimeMessage;
 
@@ -28,6 +29,11 @@ public class MailUtils {
         //收件人
         String[] tos = mailParams.getTo().toArray(new String[]{});
         helper.setTo(tos);
+        //抄送人
+        if(!CollectionUtils.isEmpty(mailParams.getCc())){
+            String[] ccs = mailParams.getCc().toArray(new String[]{});
+            helper.setCc(ccs);
+        }
         //邮件标题
         helper.setSubject(mailParams.getSubject());
         //true指的是html邮件

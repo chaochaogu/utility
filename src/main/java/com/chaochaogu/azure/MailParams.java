@@ -23,6 +23,10 @@ public class MailParams {
      */
     private List<String> to;
     /**
+     * 抄送人（支持多个）
+     */
+    private List<String> cc;
+    /**
      * 发送内容
      */
     private String content;

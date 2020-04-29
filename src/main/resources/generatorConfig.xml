@@ -5,7 +5,7 @@
 <generatorConfiguration>  
 <!-- 需要指明数据库连接器的绝对路径 -->
     <classPathEntry  
-        location="C:\workspace\ysj_repository\mysql\mysql-connector-java\5.1.39\mysql-connector-java-5.1.39.jar" />
+        location="E:\pousheng\projects\anotherrepository\mysql\mysql-connector-java\5.1.41\mysql-connector-java-5.1.41.jar" />
     <context id="sqlserverTables" targetRuntime="MyBatis3">    
         <!-- 生成的pojo，将implements Serializable-->    
         <plugin type="org.mybatis.generator.plugins.SerializablePlugin"></plugin>    
@@ -16,9 +16,9 @@
     
         <!-- 数据库链接URL、用户名、密码 -->    
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"    
-                        connectionURL="jdbc:mysql://192.168.12.141:3306/product"
-                        userId="root"    
-                        password="ody,123">
+                        connectionURL="jdbc:mysql://yddb01.mysqldb.chinacloudapi.cn/middle_test"
+                        userId="yddb01%ps_mid_test"
+                        password="pousheng@789">
         </jdbcConnection>    
     
         <!--      
@@ -34,25 +34,25 @@
         也可以使用“MAVEN”来自动生成，这样生成的代码会在target/generatord-source目录下    
         -->
         <!--<javaModelGenerator targetPackage="com.joey.mybaties.test.pojo" targetProject="MAVEN">-->    
-        <javaModelGenerator targetPackage="com.odianyun.swift.cypse.business.dao.mapper" targetProject="./src/main/java">
+        <javaModelGenerator targetPackage="com.chaochaogu" targetProject="./src/main/java">
             <property name="enableSubPackages" value="true"/>    
             <!-- 从数据库返回的值被清理前后的空格  -->    
             <property name="trimStrings" value="true" />    
         </javaModelGenerator>    
     
         <!--对应的mapper.xml文件  -->    
-        <sqlMapGenerator targetPackage="com.odianyun.swift.cypse.business.dao.mapper" targetProject="./src/main/java">
+        <sqlMapGenerator targetPackage="com.chaochaogu" targetProject="./src/main/java">
             <property name="enableSubPackages" value="true"/>    
         </sqlMapGenerator>    
     
         <!-- 对应的Mapper接口类文件 -->    
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.odianyun.swift.cypse.business.dao.mapper" targetProject="./src/main/java">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.chaochaogu" targetProject="./src/main/java">
             <property name="enableSubPackages" value="true"/>    
         </javaClientGenerator>    
     
     
         <!-- 列出要生成代码的所有表，这里配置的是不生成Example文件 -->    
-        <table tableName="merchant_product" domainObjectName="MerchantProduct"
+        <table tableName="pousheng_baowei_warehouse_mappings" domainObjectName="PoushengBaoweiWarehouseMapping"
                enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"    
                enableSelectByExample="false" selectByExampleQueryId="false" >    
             <property name="useActualColumnNames" value="false"/>    

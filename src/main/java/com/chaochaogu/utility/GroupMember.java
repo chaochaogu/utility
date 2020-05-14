@@ -1,9 +1,19 @@
 package com.chaochaogu.utility;
 
+import lombok.*;
+
 import java.io.Serializable;
 import java.util.Date;
 
+@Getter
+@Setter
+@Builder
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode(exclude = {"createdAt", "updatedAt"})
 public class GroupMember implements Serializable {
+
     private Integer id;
     /**
      * 队员名称

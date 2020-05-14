@@ -1,5 +1,7 @@
 package com.chaochaogu.utility;
 
+import lombok.Data;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -7,6 +9,7 @@ import java.util.Date;
  * @author chaochao Gu
  * @date 2019/7/16
  */
+@Data
 public class GroupInputDTO implements Serializable {
 
     private Integer id;

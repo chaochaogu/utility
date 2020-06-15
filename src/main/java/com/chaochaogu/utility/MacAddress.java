@@ -9,7 +9,7 @@ import java.net.NetworkInterface;
  * @author chaochao Gu
  * @date 2020/6/15
  */
-public class GetMacAddress {
+public class MacAddress {
 
     public static void main(String[] args) throws Exception {
         System.out.println(getMACAddress());
